@@ -10,15 +10,16 @@ task sample_data: :environment do
   end
 
   12.times do
-    name = Faker::Games::SuperSmashBros.fighter
+    name = Faker::Games::SuperSmashBros.fighter.downcase.gsub(" ","")
     User.create(
       email: "#{name}@example.com",
       password: "password",
       username: name,
       private: [true,false].sample,
-
     )
   end
+
+
   users = User.all
     users.each do |first_user|
       users.each do |second_user|
