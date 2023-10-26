@@ -1,4 +1,4 @@
-<% @user.followers.each do |user| %>
+<% @user.leaders.each do |user| %>
   <ul class="list-group">
     <li class= "nav-item">
       <a href=<%=user_path(user.username)%> class="list-group-item list-group-item-action"><%=user.username%></a>
